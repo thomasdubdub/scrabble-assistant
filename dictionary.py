@@ -28,9 +28,7 @@ class Dictionary:
 
     def anagram(self, wd):  # get all valid words formed by all the letters in 'wd'
         letters = "".join(sorted(wd))
-        if letters not in self.d[len(wd)].keys():
-            return []
-        return self.d[len(wd)][letters]
+        return self.d[len(wd)].get(letters, [])
 
     def valid(self, wd):  # return bool
         return wd in self.anagram(wd)
